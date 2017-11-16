@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/jboss-fuse-6/fis-java-openshift:latest
+FROM registry.access.redhat.com/jboss-eap-7/eap70-openshift:1.5
 
 USER root
 

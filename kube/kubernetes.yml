@@ -4,22 +4,22 @@ kind: "Template"
 labels: {}
 metadata:
   annotations:
-    description: "# fis-java-appdynamics\nbase build for any FIS application requiring\
+    description: "# poc_appdynamics_openshift\nbase build for any FIS application requiring\
       \ appdynamics agents\n"
-    fabric8.fis-java-appdynamics/iconUrl: "img/icons/java.svg"
+    fabric8.poc_appdynamics_openshift/iconUrl: "img/icons/java.svg"
   labels: {}
-  name: "fis-java-appdynamics"
+  name: "poc_appdynamics_openshift"
 objects:
 - apiVersion: "v1"
   kind: "ImageStream"
   metadata:
     annotations: {}
     labels:
-      app: "fis-java-appdynamics"
-      project: "fis-java-appdynamics"
+      app: "poc_appdynamics_openshift"
+      project: "poc_appdynamics_openshift"
       version: "1.0.0-SNAPSHOT"
       group: "openshift"
-    name: "fis-java-appdynamics"
+    name: "poc_appdynamics_openshift"
   spec:
     dockerImageRepository: ""
     tags: []
@@ -28,20 +28,20 @@ objects:
   metadata:
     annotations: {}
     labels:
-      app: "fis-java-appdynamics"
-      project: "fis-java-appdynamics"
+      app: "poc_appdynamics_openshift"
+      project: "poc_appdynamics_openshift"
       version: "1.0.0-SNAPSHOT"
       group: "openshift"
-    name: "fis-java-appdynamics"
+    name: "poc_appdynamics_openshift"
   spec:
     output:
       to:
         kind: "ImageStreamTag"
-        name: "fis-java-appdynamics:latest"
+        name: "eap70-openshift:1.5"
     source:
       contextDir: "src/main/docker"
       git:
-        uri: "https://github.com/benemon/fis-java-appdynamics"
+        uri: "https://github.com/juantimonescalona/poc_appdynamics_openshift"
       images: []
       secrets: []
       type: "Git"
@@ -50,14 +50,16 @@ objects:
         env: []
         from:
           kind: "ImageStreamTag"
-          name: "fis-java-openshift:latest"
+#          name: "eap70-openshift:1.5"
+          name: "webapp-appdynamics-openshift:latest"
           namespace: "openshift"
       type: "Docker"
     triggers:
     - imageChange:
         from:
           kind: "ImageStreamTag"
-          name: "fis-java-openshift:latest"
+#          name: "eap70-openshift:1.5"
+          name: "webapp_appdynamics_openshift:latest"
           namespace: "openshift"
       type: "ImageChange"
 parameters: []
