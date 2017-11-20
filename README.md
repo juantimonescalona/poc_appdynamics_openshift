@@ -3,10 +3,10 @@ Extraido de fis-java-appdynamics, haciendo una poc para monitorizar contenedores
 
 * base build for any FIS application requiring appdynamics agents
 
-
-oc new-build https://github.com/juantimonescalona/poc_appdynamics_openshift/#0.0.1 --allow-missing-images --image-stream="openshift/wildfly:latest"
+oc new-build https://github.com/juantimonescalona/poc_appdynamics_openshift --context-dir=src/main/docker
 
 Si hiciera falta:
 oc import-image my-jboss-eap-7/eap70-openshift:1.5 --from=registry.access.redhat.com/jboss-eap-7/eap70-openshift:1.5 --confirm
 
 oc new-app pocappdynamicsopenshift
+
