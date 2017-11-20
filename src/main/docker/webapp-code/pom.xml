@@ -17,7 +17,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<plugins>
+		<!--<plugins>
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
@@ -26,9 +26,9 @@
 					<execution>
 						<id>default</id>
 						<goals>
-							<goal>build</goal>
+							<goal>build</goal> -->
 							<!--   <goal>push</goal> -->
-						</goals>
+						<!--</goals>
 					</execution>
 				</executions>
 				<configuration>
@@ -37,6 +37,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+                -->
 		<finalName>helloworld-eap-mvn</finalName>
 	</build>
 
